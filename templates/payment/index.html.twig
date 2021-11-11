@@ -1,0 +1,11 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Make Payment{% endblock %}
+
+{% block body %}
+    <h3>You are about to reserve a Double Room for Hotel Craiova</h3>
+    <form action="{{ url('checkout') }}" method="POST">
+        <button type="submit" class="btn btn-primary btn-lg">Checkout</button>
+    </form>
+{% endblock %}

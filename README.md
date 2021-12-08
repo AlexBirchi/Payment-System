@@ -1,5 +1,9 @@
 # Payment-System
-Payment system using symfony + stripe
+Payment system using symfony + stripe.
+
+This is a test app that uses only dummy data.
+
+In order to use the app, create an environment variable inside your .env or .env.local called "STRIPE_SK" and set it to your stripe secret key from your stripe developer account on the API keys section.
 
 # Testing
 1. Click your checkout button

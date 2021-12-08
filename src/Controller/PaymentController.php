@@ -25,6 +25,7 @@ class PaymentController extends AbstractController
         Stripe::setApiKey($stripeSK);
 
         $checkout_session = Session::create([
+            'mode' => 'payment',
             'payment_method_types' => [
                 'card'
             ],
@@ -32,13 +33,12 @@ class PaymentController extends AbstractController
                 'price_data' => [
                     'currency' => 'usd',
                     'product_data' => [
-                        'name' => 'Double Room - Hotel Craiova',
+                        'name' => 'Double Room + SPA',
                     ],
-                    'unit_amount' => 2000,
+                    'unit_amount' => 6500,
                 ],
                 'quantity' => 1,
             ]],
-            'mode' => 'payment',
             'success_url' => $this->generateUrl('success_url', [], UrlGeneratorInterface::ABSOLUTE_URL),
             'cancel_url' => $this->generateUrl('cancel_url', [], UrlGeneratorInterface::ABSOLUTE_URL),
         ]);
